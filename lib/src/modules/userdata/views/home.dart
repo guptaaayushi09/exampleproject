@@ -1,12 +1,10 @@
-import 'dart:developer';
 import 'package:example/routes/route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:example/src/modules/userdata/controller/userdatacontroller.dart';
-import 'package:example/src/modules/userdata/views/secondpage.dart';
 
 class Home extends GetView<DataController> {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(

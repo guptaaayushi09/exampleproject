@@ -1,23 +1,14 @@
-import 'dart:developer';
-import 'package:example/src/modules/userdata/binding/userdatabinding.dart';
-import 'package:example/src/modules/userdata/model/useralbum.dart';
 import 'package:example/src/modules/userdata/views/home.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'dart:convert';
-import 'dart:async';
 import 'package:example/routes/route.dart';
+
 void main() {
-  runApp(MyApp());      
-
-
-  
-
+  runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: const Home(),
       getPages: routes,
     );
   }

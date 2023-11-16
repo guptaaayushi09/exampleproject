@@ -1,17 +1,20 @@
-import 'dart:developer';
-import 'package:example/src/modules/userdata/controller/userdatacontroller.dart';
 import 'package:example/src/modules/userdata/model/useralbum.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../controller/secondpagecontroller.dart';
 
-class SecondPage extends StatelessWidget {
-  SecondPage({Key? key}) : super(key: key);
+class SecondPage extends GetView<SecondPageController> {
+  const SecondPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    //controlller.dataValue.value = Get.arguments.title;
+
     final ApiModel data = Get.arguments as ApiModel;
-    
-    log(data.toString());
+    final SecondPageController yourController = Get.put(SecondPageController());
+    yourController.setData(data);
+    final ApiModel fetchedData = yourController.getData();
+
     return Card(
       child: Column(
         children: <Widget>[
@@ -29,7 +32,7 @@ class SecondPage extends StatelessWidget {
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               hintText: 'User Title based on ID',
-              labelText: 'Data from First Screen: ${data.title}',
+              labelText: 'Data from First Screen: ${fetchedData.userId}',
             ),
           ),
         ],
