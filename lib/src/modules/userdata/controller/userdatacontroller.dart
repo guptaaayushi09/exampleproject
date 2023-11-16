@@ -1,13 +1,10 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'package:example/src/modules/userdata/repository/repository.dart';
 import 'package:get/get.dart';
 import 'package:example/src/modules/userdata/model/useralbum.dart';
-
 class DataController extends GetxController {
   RxList<ApiModel> albums = <ApiModel>[].obs;
-
-  RxString appBar = "flutter ".obs;
+  RxString appBar = "Flutter ".obs;
 
   @override
   void onInit() {
@@ -20,7 +17,6 @@ class DataController extends GetxController {
     if (response != null) {
       final json = jsonDecode(response) as List<dynamic>;
       albums.value = json.map((album) => ApiModel.fromJson(album)).toList();
-      //log(albums.toString());
     }
   }
 
