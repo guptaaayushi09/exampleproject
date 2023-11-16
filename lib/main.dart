@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // initialBinding: UserdataBindings(),
       initialRoute: MyRoutes.home,
-    
+
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
